@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ListItem from './components/ListItem';
 
 class App extends React.Component {
   state = {
@@ -61,9 +62,11 @@ class App extends React.Component {
     return (
       <div>
           List
-          {
-          this.state.data.map((el: any) => <p key={el._id}>{el.name.first}</p>)
-          }
+          <ul>
+            {
+            this.state.data.map((el: any) => <ListItem key={el._id} item={el}/>)
+            }
+          </ul>
 
             <form onSubmit={this.onSubmit}>
                 <input
