@@ -32,7 +32,17 @@ class App extends React.Component {
     })
     .then(response => console.log(response))
     .then(() => this.getData())
+  }
 
+  handleDelete = (id: any) => {
+      fetch(`/api/items/${id}`, {
+          method: 'delete',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          },
+          })
+      .then(response => console.log(response))
   }
 
   render() {
@@ -41,7 +51,8 @@ class App extends React.Component {
           <h1>List</h1>
           <ul>
             {
-            this.state.data.map((el: any) => <ListItem key={el._id} item={el} getData={this.getData}/>)
+            this.state.data.map((el: any) => 
+            <ListItem key={el._id} item={el} getData={this.getData} handleDelete={this.handleDelete}/>)
             }
           </ul>
 
