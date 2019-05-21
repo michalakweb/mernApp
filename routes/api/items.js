@@ -12,4 +12,25 @@ router.get('/', (req, res) => {
     .then(items => res.json(items))
 });
 
+// @route POST api/items
+// @description GET All Items
+// @access Public
+router.post('/', (req, res) => {
+    const newItem = new Item({
+        customerID: req.body.customerID,
+        name: {
+            first: req.body.first,
+            last: req.body.last
+        },
+        birthday: req.body.birthday,
+        gender: req.body.gender,
+        lastContact: req.body.lastContact,
+        customerLifetimeValue: Math.random(),
+    });
+
+    newItem.save()
+    .then(item => res.json())
+});
+
+
 module.exports = router;

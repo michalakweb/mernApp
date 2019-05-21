@@ -3,18 +3,12 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ItemSchema = new Schema({
-    customerID: {
-        type: Number,
-        required: true
-    },
     name: {
         first: {
-            type: String,
-            required: true
+            type: String
         },
         last: {
-            type: String,
-            required: true
+            type: String
         }
     },
     birthday: {
