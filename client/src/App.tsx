@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import ListItem from './components/ListItem';
 import Form from './components/Form';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class App extends React.Component {
   state = {
@@ -48,15 +49,30 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          <h1>List</h1>
-          <ul>
-            {
-            this.state.data.map((el: any) => 
-            <ListItem key={el._id} item={el} getData={this.getData} handleDelete={this.handleDelete}/>)
-            }
-          </ul>
-
-          <Form handleAdd={this.handleAdd}/>
+        <Container>
+          <Row>
+            <Col>
+              <h1>Webtrekk challenge</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <h3>Add new user</h3>
+              <Form handleAdd={this.handleAdd}/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            <h3>Users List:</h3>
+            <ul>
+              {
+              this.state.data.map((el: any) => 
+              <ListItem key={el._id} item={el} getData={this.getData} handleDelete={this.handleDelete}/>)
+              }
+            </ul>
+            </Col>
+          </Row>
+        </Container>
             
       </div>
     )
