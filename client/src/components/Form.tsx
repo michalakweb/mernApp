@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
 interface FormProps {
     handleAdd: any
 }
 
 
-class Form extends React.Component<FormProps> {
+class FormClient extends React.Component<FormProps> {
     state = {
         first: '',
         last: '',
@@ -35,49 +36,57 @@ class Form extends React.Component<FormProps> {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                  type='text'
-                  name='first'
-                  id='item'
-                  placeholder='First name'
-                  onChange={this.onChange}
-                />
-                <input
-                  type='text'
-                  name='last'
-                  id='item'
-                  placeholder='Last name'
-                  onChange={this.onChange}
-                />
-                <input
-                  type='text'
-                  name='birthday'
-                  id='item'
-                  placeholder='Birthday'
-                  onChange={this.onChange}
-                />
-                <input
-                  type='text'
-                  name='lastContact'
-                  id='item'
-                  placeholder='Last Contact'
-                  onChange={this.onChange}
-                />
-                <input
-                  type='text'
-                  name='gender'
-                  id='item'
-                  placeholder='Gender'
-                  onChange={this.onChange}
-                />
-                <button>
-                  Add Item
-                </button>
-            </form>
+          <div>
+            <Form onSubmit={this.onSubmit}>
+              <Row className='my-2'>
+                <Col>
+                  <Form.Control
+                    name='first'
+                    placeholder='First name'
+                    onChange={this.onChange}
+                  />
+                </Col>
+                <Col>
+                  <Form.Control
+                    name='last'
+                    placeholder='Last name'
+                    onChange={this.onChange}
+                  />
+                </Col>
+                <Col>
+                  <Form.Control
+                    name='gender'
+                    placeholder='Gender'
+                    onChange={this.onChange}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Form.Control
+                    name='birthday'
+                    placeholder='Birthday'
+                    onChange={this.onChange}
+                  />
+                </Col>
+                <Col>
+                  <Form.Control
+                    name='lastContact'
+                    placeholder='Last contact'
+                    onChange={this.onChange}
+                  />
+                </Col>
+                <Col>
+                  <Button block type="submit">
+                    Add Client
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
+          </div>
         )
     }
 }
     
 
-export default Form;
+export default FormClient;
