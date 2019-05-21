@@ -19,13 +19,13 @@ router.post('/', (req, res) => {
     const newItem = new Item({
         customerID: req.body.customerID,
         name: {
-            first: req.body.first,
-            last: req.body.last
+            first: req.body.name.first,
+            last: req.body.name.last
         },
         birthday: req.body.birthday,
         gender: req.body.gender,
         lastContact: req.body.lastContact,
-        customerLifetimeValue: Math.random(),
+        customerLifetimeValue: req.body.customerLifetimeValue || Math.random(),
     });
 
     newItem.save()
