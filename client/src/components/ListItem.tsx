@@ -29,7 +29,7 @@ class ListItem extends React.Component<ListItemProps> {
             this.state.componentVisible &&
             <div>
                 <li>
-                    <Row>
+                    <Row className='my-2'>
                         <Col>
                         <p>{this.props.item.name.first}</p>
                         </Col>
@@ -37,10 +37,10 @@ class ListItem extends React.Component<ListItemProps> {
                         <p>{this.props.item.name.last}</p>
                         </Col>
                         <Col>
-                        <Button onClick={this.handleShowModal}>Details</Button>
+                        <Button variant='outline-primary' onClick={this.handleShowModal}>Details</Button>
                         </Col>
                         <Col>
-                        <Button variant='danger' onClick={() => {this.handleDelete(this.props.item._id)}}>
+                        <Button variant='outline-danger' onClick={() => {this.handleDelete(this.props.item._id)}}>
                         Delete user</Button>
                         </Col>
                     </Row>

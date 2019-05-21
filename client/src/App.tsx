@@ -50,18 +50,18 @@ class App extends React.Component {
     return (
       <div>
         <Container>
-          <Row>
+          <Row className='my-2'>
             <Col>
               <h1>Webtrekk challenge</h1>
             </Col>
           </Row>
-          <Row>
+          <Row className='my-4'>
             <Col>
               <h3>Add new user</h3>
               <Form handleAdd={this.handleAdd}/>
             </Col>
           </Row>
-          <Row>
+          <Row className='my-4'>
             <Col>
             <h3>Users List:</h3>
             <ul>
