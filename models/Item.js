@@ -30,3 +30,5 @@ const ItemSchema = new Schema({
         type: Number
     }
 });
+
+module.exports = Item = mongoose.model('item', ItemSchema);
