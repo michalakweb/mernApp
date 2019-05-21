@@ -57,7 +57,7 @@ class App extends React.Component {
           </Row>
           <Row className='my-4'>
             <Col>
-              <h3>Add new user</h3>
+              <h3>Add new client</h3>
               <Form handleAdd={this.handleAdd}/>
             </Col>
           </Row>

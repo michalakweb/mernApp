@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Modal, Button, Container, Row, Col } from 'react-bootstrap'
+import { Modal, Button, Row, Col } from 'react-bootstrap'
 
 interface ListItemProps {
     item: any,
