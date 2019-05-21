@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
 import ListItem from './components/ListItem';
+import Form from './components/Form';
 
 class App extends React.Component {
   state = {
     data: [],
-    first: '',
-    last: '',
-    gender: ''
   }
 
   componentDidMount() {
@@ -23,26 +21,7 @@ class App extends React.Component {
     })
   }
 
-  onChange = (e: any) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  onSubmit = (e: any) => {
-    e.preventDefault();
-
-    const newItem = {
-      "name": {
-        "first": this.state.first,
-        "last": this.state.last
-      },
-      "birthday": "1969-11-21",
-      "gender": this.state.gender,
-      "lastContact": "2017-03-18T12:20:06.702Z",
-      "customerLifetimeValue": ''
-    };
-
-    this.handleAdd(newItem)
-  };
+  
 
   handleAdd = (item: any) => {
     fetch('/api/items', {
@@ -61,53 +40,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          List
+          <h1>List</h1>
           <ul>
             {
             this.state.data.map((el: any) => <ListItem key={el._id} item={el}/>)
             }
           </ul>
 
-            <form onSubmit={this.onSubmit}>
-                <input
-                  type='text'
-                  name='first'
-                  id='item'
-                  placeholder='First name'
-                  onChange={this.onChange}
-                />
-                <input
-                  type='text'
-                  name='last'
-                  id='item'
-                  placeholder='Last name'
-                  onChange={this.onChange}
-                />
-                <input
-                  type='text'
-                  name='birthday'
-                  id='item'
-                  placeholder='Birthday'
-                  onChange={this.onChange}
-                />
-                <input
-                  type='text'
-                  name='lastContact'
-                  id='item'
-                  placeholder='Last Contact'
-                  onChange={this.onChange}
-                />
-                <input
-                  type='text'
-                  name='gender'
-                  id='item'
-                  placeholder='Gender'
-                  onChange={this.onChange}
-                />
-                <button>
-                  Add Item
-                </button>
-            </form>
+          <Form handleAdd={this.handleAdd}/>
+            
       </div>
     )
   }
