@@ -28,7 +28,7 @@ class ListItem extends React.Component<ListItemProps> {
             // Showing the component by default, hides when a user is deleted
             this.state.componentVisible &&
             <div>
-                <li>
+                <li className='list-group-item'>
                     <Row className='my-2'>
                         <Col>
                         <p>{this.props.item.name.first}</p>
@@ -63,11 +63,13 @@ class ListItem extends React.Component<ListItemProps> {
                     </Modal.Header>
                     <Modal.Body>
                     
-                    <div>
-                        <p>Name: {this.props.item.name.first}</p>
-                        <p>Last name: {this.props.item.name.last}</p>
-                        <p>Birthday: {this.props.item.birthday}</p>
-                        <p>Gender: {this.props.item.gender}</p>
+                    <div className='lead'>
+                        <p>Name: <strong>{this.props.item.name.first}</strong></p>
+                        <p>Last name: <strong>{this.props.item.name.last}</strong></p>
+                        <p>Birthday: <strong>{this.props.item.birthday}</strong></p>
+                        <p>Gender: <strong>{this.props.item.gender}</strong></p>
+                        <p>Customer Value: <strong>{this.props.item.customerLifetimeValue}</strong></p>
+                        <p>Last Contact: <strong>{this.props.item.lastContact}</strong></p>
                         <Button variant='danger' onClick={() => {this.handleDelete(this.props.item._id)}}>
                         Delete user</Button>
                     </div>

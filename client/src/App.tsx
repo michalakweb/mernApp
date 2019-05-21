@@ -64,7 +64,7 @@ class App extends React.Component {
           <Row className='my-4'>
             <Col>
             <h3>Users List:</h3>
-            <ul>
+            <ul className="list-group list-group-flush">
               {
               this.state.data.map((el: any) => 
               <ListItem key={el._id} item={el} getData={this.getData} handleDelete={this.handleDelete}/>)
