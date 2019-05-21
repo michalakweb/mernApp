@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Modal, Button } from 'react-bootstrap'
+import { Modal, Button, Container, Row, Col } from 'react-bootstrap'
 
 interface ListItemProps {
     item: any,
@@ -29,11 +29,21 @@ class ListItem extends React.Component<ListItemProps> {
             this.state.componentVisible &&
             <div>
                 <li>
-                    <p>{this.props.item.name.first}</p>
-                    <p>{this.props.item.name.last}</p>
-                    <button onClick={this.handleShowModal}>Details</button>
-                    <button onClick={() => {this.handleDelete(this.props.item._id)}}>
-                    Delete user</button>
+                    <Row>
+                        <Col>
+                        <p>{this.props.item.name.first}</p>
+                        </Col>
+                        <Col>
+                        <p>{this.props.item.name.last}</p>
+                        </Col>
+                        <Col>
+                        <Button onClick={this.handleShowModal}>Details</Button>
+                        </Col>
+                        <Col>
+                        <Button variant='danger' onClick={() => {this.handleDelete(this.props.item._id)}}>
+                        Delete user</Button>
+                        </Col>
+                    </Row>
                 </li>
                 
                 { 
