@@ -21,8 +21,6 @@ class App extends React.Component {
     })
   }
 
-  
-
   handleAdd = (item: any) => {
     fetch('/api/items', {
     method: 'post',
@@ -43,7 +41,7 @@ class App extends React.Component {
           <h1>List</h1>
           <ul>
             {
-            this.state.data.map((el: any) => <ListItem key={el._id} item={el}/>)
+            this.state.data.map((el: any) => <ListItem key={el._id} item={el} getData={this.getData}/>)
             }
           </ul>
 
