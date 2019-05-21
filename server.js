@@ -10,10 +10,10 @@ const app = express();
 app.use(bodyParser.json());
 
 // DBB config
-const db = require('./keys').mongoURI;
+const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
-mongoose.connect(db)
+mongoose.connect(db, { useNewUrlParser: true })
 .then(() => console.log('mongo db connected'))
 .catch((error) => console.log(error))
 
