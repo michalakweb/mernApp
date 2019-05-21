@@ -29,7 +29,7 @@ class ListItem extends React.Component<ListItemProps> {
             this.state.componentVisible &&
             <div>
                 <li className='list-group-item'>
-                    <Row className='my-2'>
+                    <Row className='my-2 text-center lead'>
                         <Col>
                         <p>{this.props.item.name.first}</p>
                         </Col>
