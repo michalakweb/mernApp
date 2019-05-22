@@ -15,6 +15,10 @@ In the client folder, you can run:
 
 Installs React's dependencies.
 
+## Development
+
+In the main project directory, you can run:
+
 ### `npm run dev`
 
 Runs both the client and server in development mode.
