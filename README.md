@@ -1,16 +1,19 @@
-Webtrekk challenge.
+# Webtrekk challenge.
 
 ## Installation
 
-In the project directory, you can run:
-
-### `npm run client-install`
-
-Installs React's dependencies.
+In the main project directory, you can run:
 
 ### `npm install`
 
 Installs back-end dependencies.
+
+
+In the client folder, you can run: 
+
+### `npm install`
+
+Installs React's dependencies.
 
 ### `npm run dev`
 
